@@ -12,12 +12,14 @@ Dict = {0: 'Normal', 1: "Pneumonia"}
 
 def predict_label(imgPath):
     imgSize = (224, 224)
-    return imgPath
-    '''img = cv.imread(imgPath)
+    
+    img = cv.imread(imgPath)
+    
     img = cv.resize(img, imgSize)
+    return img[0][0]
     
     
-    img = img.astype(np.float32)/255
+    '''img = img.astype(np.float32)/255
     
     finalImg = np.expand_dims(img, axis=0)
     result = np.argmax(model.predict(finalImg), axis=-1)[0]
