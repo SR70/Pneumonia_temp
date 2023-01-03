@@ -20,12 +20,12 @@ def predict_label(imgPath):
     
     
     img = img.astype(np.float32)/255.
-    return img[0][0][0]
     
-    '''finalImg = np.expand_dims(img, axis=0)
-    result = np.argmax(model.predict(finalImg), axis=-1)[0]
+    finalImg = np.expand_dims(img, axis=0)
+    result = np.argmax(model.predict(finalImg))
+    return result
     
-    re = Dict[result]
+    '''re = Dict[result]
     
     if re == "Pneumonia":
         return "Pneumonia Positive"
