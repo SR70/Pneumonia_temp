@@ -16,12 +16,13 @@ def predict_label(imgPath):
     img = cv.imread(imgPath)
     
     img = cv.resize(img, imgSize)
+    
+    
+    
+    img = img.astype(np.float32)/255.
     return img[0][0][0]
     
-    
-    '''img = img.astype(np.float32)/255
-    
-    finalImg = np.expand_dims(img, axis=0)
+    '''finalImg = np.expand_dims(img, axis=0)
     result = np.argmax(model.predict(finalImg), axis=-1)[0]
     
     re = Dict[result]
