@@ -14,6 +14,8 @@ def predict_label(imgPath):
     imgSize = (224, 224)
     img = cv.imread(imgPath)
     img = cv.resize(img, imgSize)
+    return done
+    '''
     img = img.astype(np.float32)/255.
     finalImg = np.expand_dims(img, axis=0)
     result = np.argmax(model.predict(finalImg), axis=-1)[0]
@@ -21,7 +23,7 @@ def predict_label(imgPath):
     
     if re == "Pneumonia":
         return "Pneumonia Positive"
-    return re
+    return re'''
 
 
 @app.route('/', methods=['GET'])
