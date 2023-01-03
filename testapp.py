@@ -36,9 +36,9 @@ def get_output():
         
         img_path = "static/" + img.filename
         img.save(img_path)
-        '''p = predict_label(img_path)
-        os.remove(img_path)'''
-        return render_template("index.html", prediction=img)
+        p = predict_label(img_path)
+        #os.remove(img_path)
+        return render_template("index.html", prediction=p)
 
 # main driver function
 if __name__ == '__main__':
