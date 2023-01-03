@@ -34,11 +34,11 @@ def get_output():
     if request.method == 'POST':
         img = request.files['my_image']
         
-        '''img_path = "static/" + img.filename
+        img_path = "static/" + img.filename
         img.save(img_path)
-        p = predict_label(img_path)
+        '''p = predict_label(img_path)
         os.remove(img_path)'''
-        return render_template("index.html", prediction=img.filename)
+        return render_template("index.html", prediction=img)
 
 # main driver function
 if __name__ == '__main__':
