@@ -16,7 +16,7 @@ def predict_label(imgPath):
     img = cv.imread(imgPath)
     
     img = cv.resize(img, imgSize)
-    return img[0][0]
+    return img[0][0][0]
     
     
     '''img = img.astype(np.float32)/255
