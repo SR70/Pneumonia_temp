@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 model = load_model('model.h5')
-Dict = {0: 'Normal', 1: "Pneumonia"}
+label = ["Normal", "Pneumonia"]
 
 
 def predict_label(imgPath):
@@ -21,9 +21,9 @@ def predict_label(imgPath):
     
     img = img.astype(np.float32)/255.
     
-    finalImg = np.expand_dims(img, axis=0)
-    result = np.argmax(model.predict(finalImg))
-    return result
+    finalImg = img[np.newaxis]
+    result = model.predict(finalImg)    
+    return label[np.argmax(result)]
     
     '''re = Dict[result]
     
